@@ -389,7 +389,7 @@ app.delete('/resetLotto', (req, res) => {
   // Queries to delete data from the tables
   const deleteOrdersQuery = 'DELETE FROM orders';
   const deleteLotteryQuery = 'DELETE FROM lotto';
-  const deleteUsersQuery = 'DELETE FROM user';
+  const deleteUsersQuery = 'DELETE FROM user where user_type != 1';
 
   // Begin a transaction
   db.beginTransaction(err => {
